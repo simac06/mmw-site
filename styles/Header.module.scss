@@ -21,19 +21,7 @@
     }
 }
 
-.social_icons_container {
-    display: none;
-
-    @include desktop() {
-        display: flex;
-        justify-content: space-evenly;
-        gap: 0.25rem;
-    }
-}
-
-.social_icons {
-    font-size: 1.5rem;
-}
+// LOGO
 
 .main_logo_container {
     display: flex;
@@ -72,17 +60,30 @@
     }
 }
 
+// NAV INACTIVE
+
 .nav_inactive {
     visibility: hidden;
     transition: 0.5s ease-in-out;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: 0.5s ease-in-out;
 
     @include desktop() {
-        height: unset;
         visibility: visible;
-        display: flex;
         align-self: center;
         height: unset;
+        justify-content: unset;
+        position: unset;
+        top: unset;
+        width: unset;
+        transition: unset;
+        height: unset;
+
     }
 }
 
@@ -90,6 +91,7 @@
     visibility: hidden;
     opacity: 0;
     transition: 0.5s ease-in-out;
+
 
     @include desktop() {
         visibility: visible;
@@ -107,10 +109,13 @@
     }
 }
 
+// NAV ACTIVE
+
 .nav_active {
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
-    display: block;
+    display: flex;
+    justify-content: center;
     position: fixed;
     top: 0;
     width: 100%;
@@ -118,6 +123,7 @@
 }
 
 .ul {
+    position: fixed;
     opacity: 1;
     visibility: visible;
     display: flex;
@@ -133,6 +139,7 @@
         width: 100%;
         justify-content: space-evenly;
         padding: 0rem;
+        position: unset;
     }
 }
 
@@ -150,6 +157,8 @@
         padding: 0.5em
     }
 }
+
+// TOGGLER
 
 .toggler_container {
     display: flex;
@@ -180,4 +189,18 @@
 #toggled {
     rotate: -90deg;
     transition: 1.25s ease;
+}
+
+.social_icons_container {
+    display: none;
+
+    @include desktop() {
+        display: flex;
+        justify-content: space-evenly;
+        gap: 0.25rem;
+    }
+}
+
+.social_icons {
+    font-size: 1.5rem;
 }
