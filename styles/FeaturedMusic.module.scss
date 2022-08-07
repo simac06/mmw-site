@@ -1,0 +1,122 @@
+@import 'mixins';
+@import 'variables';
+
+.section {
+    height: 100vh;
+    width: 100%;
+    padding: 2em;
+    margin-bottom: 10rem;
+
+    @include desktop() {
+        height: unset;
+        padding: 4rem 8rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.heading {
+    font-size: 2.5em;
+    font-weight: $font-primary-w;
+    color: #fff;
+    text-align: left;
+    font-family: $font-primary;
+
+    @include desktop() {
+        font-size: 3rem;
+        text-align: center;
+    }
+}
+
+.album_grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 2rem;
+    margin: 2rem 0;
+    z-index: -1;
+
+    @include desktop() {
+        display: flex;
+        justify-content: space-evenly;
+        grid-gap: unset;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 3rem 0;
+        gap: 1em;
+    }
+}
+
+.album {
+
+    img {
+        position: relative;
+        z-index: 1 !important;
+
+        @include desktop() {
+            height: 15rem !important;
+            width: 100% !important;
+        }
+    }
+
+    .album_info {
+        padding-top: 0.5rem;
+
+        @include desktop() {
+            padding-top: 1rem;
+            padding-bottom: 2rem;
+        }
+    }
+
+    h2 {
+        font-size: 1.4em;
+        font-weight: bold;
+        color: #fff;
+        text-align: left;
+        font-family: $font-primary;
+        font-weight: $font-primary-w;
+
+        @include desktop() {
+            font-size: 2rem;
+        }
+    }
+
+    p {
+        font-size: 1em;
+        color: #fff;
+        text-align: left;
+        font-family: $font-primary;
+        font-weight: 400;
+
+        @include desktop() {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.button {
+    height: 4rem;
+    width: 100%;
+    background: none;
+    border: 2px solid #fff;
+    font-family: $font-primary;
+    font-weight: $font-primary-w;
+    font-size: 1.5em;
+    transition: 0.4s ease-in-out;
+
+
+    &:hover {
+        background-color: #fff;
+        color: #000;
+    }
+
+    @include desktop() {
+        display: flex;
+        align-items: center;
+        padding: 1.5rem 5rem;
+        width: 100%;
+        height: 5rem;
+        font-size: 1.5em;
+    }
+}

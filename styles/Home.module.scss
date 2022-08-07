@@ -1,0 +1,34 @@
+@import "mixins";
+
+.img_container {
+    width: 100%;
+    height: 100vh;
+
+    & img {
+        width: 100%;
+        object-fit: cover;
+        height: 100vh;
+    }
+}
+
+//  TOP MOBILE LOGO STYLES
+
+.mobile_logo_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 12vh;
+    position: fixed;
+    z-index: 2;
+
+    .main_logo {
+        height: 2em;
+    }
+
+    @include desktop() {
+        display: none;
+    }
+}
+
+// END TOP MOBILE LOGO STYLES
