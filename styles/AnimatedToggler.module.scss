@@ -1,0 +1,17 @@
+@import "mixins";
+
+.toggler {
+    font-size: 3rem;
+    display: block;
+    margin: 0 auto;
+    rotate: 135deg;
+
+    @include desktop() {
+        display: none;
+    }
+}
+
+#toggled {
+    rotate: -90deg;
+    transition: 1.5s ease;
+}

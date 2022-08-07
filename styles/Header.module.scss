@@ -1,0 +1,183 @@
+@import "mixins";
+@import "variables";
+
+.header {
+    position: relative;
+    height: 100vh;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    @include desktop() {
+        position: unset;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 8vh;
+        padding: 4rem;
+    }
+}
+
+.social_icons_container {
+    display: none;
+
+    @include desktop() {
+        display: flex;
+        justify-content: space-evenly;
+        gap: 0.25rem;
+    }
+}
+
+.social_icons {
+    font-size: 1.5rem;
+}
+
+.main_logo_container {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    align-items: flex-end;
+    padding-bottom: 1rem;
+    width: 100%;
+    height: 15vh;
+    top: 0;
+    background-color: $dark;
+
+    @include desktop() {
+        width: unset;
+        display: unset;
+        position: unset;
+        height: unset;
+        padding: unset;
+        background-color: unset;
+        top: unset;
+
+
+    }
+}
+
+.main_logo {
+    display: block;
+    height: 2em;
+
+
+    @include desktop() {
+        display: block;
+        height: 2.5rem;
+        position: unset;
+        top: unset;
+    }
+}
+
+.nav_inactive {
+    visibility: hidden;
+    transition: 0.5s ease-in-out;
+    height: 100vh;
+
+    @include desktop() {
+        height: unset;
+        visibility: visible;
+        display: flex;
+        align-self: center;
+        height: unset;
+    }
+}
+
+.nav_inactive>.ul {
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+
+    @include desktop() {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.nav_inactive>.ul>li {
+    visibility: hidden;
+    opacity: 0;
+
+    @include desktop() {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.nav_active {
+    height: 100vh;
+    background-color: $dark;
+    display: block;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: 0.5s ease-in-out;
+}
+
+.ul {
+    opacity: 1;
+    visibility: visible;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+    padding: 10rem;
+    transition: 0.5s ease-in-out;
+
+    @include desktop() {
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-evenly;
+        padding: 0 10rem;
+    }
+}
+
+.li {
+    list-style: none;
+    font-family: $font-primary;
+    font-size: 3rem;
+    text-transform: uppercase;
+    opacity: 1;
+    visibility: visible;
+    transition: 0.5s ease-in-out;
+
+    @include desktop() {
+        font-size: 1.5rem;
+        padding: 0.5em
+    }
+}
+
+.toggler_container {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    bottom: 5%;
+    z-index: 100;
+
+    @include desktop() {
+        display: none;
+    }
+}
+
+.toggler {
+    font-size: 3rem;
+    display: block;
+    margin: 0 auto;
+    rotate: 135deg;
+    transition: 1.25s ease;
+
+    @include desktop() {
+        display: none;
+    }
+}
+
+#toggled {
+    rotate: -90deg;
+    transition: 1.25s ease;
+}
