@@ -9,18 +9,22 @@ import { FaFacebookSquare } from 'react-icons/fa';
 
 function Header() {
 
-    // When the state of the toggler is true, add the active class to the nav
+    // Defining state for the menu button
     const [toggled, setIsToggled] = useState(false);
 
+    // When menu button is clicked, make state = true, and vice versa
     function handleClick() {
         setIsToggled(toggled => !toggled);
     }
 
+    // Store toggler state in variable with simpler terms
     let togglerState = toggled ? 'toggled' : 'not_toggled';
 
+    // Define togglerAnimatonClass and navToggleClass
     let togglerAnimationClass;
     let navToggleClass;
 
+    // If togglerState is toggled, set togglerAnimationClass to 'toggled' and navToggleClass to 'nav_active', and vice versa
     if (togglerState === 'toggled') {
         togglerAnimationClass = styles.toggled;
         navToggleClass = styles.nav_active;
@@ -76,6 +80,8 @@ function Header() {
             <div className={styles.toggler_container}>
 
                 <IoCloseSharp
+
+                    // When menu button is clicked, run the handleClick function
                     onClick={handleClick}
                     className={styles.toggler}
                     id={togglerAnimationClass}

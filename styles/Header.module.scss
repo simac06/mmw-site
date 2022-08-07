@@ -2,15 +2,16 @@
 @import "variables";
 
 .header {
-    position: relative;
-    height: 100vh;
+    height: 9.1vh;
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
+    background-color: #000;
+    z-index: 100;
 
     @include desktop() {
-        position: unset;
+        position: absolute;
         width: 100%;
         display: flex;
         flex-direction: row;
@@ -18,13 +19,15 @@
         align-items: center;
         height: 8vh;
         padding: 4rem;
+        background: unset;
+        bottom: unset;
     }
 }
 
 // LOGO
 
 .main_logo_container {
-    display: flex;
+    display: none;
     justify-content: center;
     position: fixed;
     align-items: flex-end;
@@ -32,7 +35,8 @@
     width: 100%;
     height: 12vh;
     top: 0;
-    z-index: 10000;
+    z-index: 1;
+
 
     @include desktop() {
         width: unset;
@@ -120,6 +124,7 @@
     top: 0;
     width: 100%;
     transition: 0.5s ease-in-out;
+
 }
 
 .ul {
@@ -133,6 +138,8 @@
     height: 100%;
     padding: 10rem;
     transition: 0.5s ease-in-out;
+
+
 
     @include desktop() {
         flex-direction: row;
@@ -151,45 +158,58 @@
     opacity: 1;
     visibility: visible;
     transition: 0.5s ease-in-out;
+    font-weight: $font-primary-w;
 
     @include desktop() {
         font-size: 1.5rem;
-        padding: 0.5em
+        padding: 0.5em;
     }
 }
 
 // TOGGLER
 
+
+// Position the toggler at the bottom center of the screen.
 .toggler_container {
     display: flex;
     position: absolute;
     justify-content: center;
     align-items: center;
     width: 100%;
-    bottom: 5%;
-    z-index: 100;
+    bottom: 0;
+    background-color: #000;
+    position: fixed;
+    padding: 0.8rem;
+    height: 9.1vh;
 
     @include desktop() {
         display: none;
     }
 }
 
+// Toggler styles regardless of if it is toggled or not, PLUS roatating 135deg to make it an addition sign by default as opposed to an X
 .toggler {
     font-size: 3rem;
     display: block;
     margin: 0 auto;
     rotate: 135deg;
     transition: 1.25s ease;
+    font-weight: $font-primary-w;
+
 
     @include desktop() {
         display: none;
     }
 }
 
+
+// When toggler is toggled, have the toggler rotate -90deg to turn it into a X.
 #toggled {
     rotate: -90deg;
     transition: 1.25s ease;
 }
+
+// SOCIAL MEDIA ICONS
 
 .social_icons_container {
     display: none;

@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-import Link from 'next/link'
+import styles from '../styles/Home.module.scss'
 import Header from '../components/Header'
+import FeaturedMusic from '../components/FeaturedMusic'
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -17,7 +17,29 @@ export default function Home() {
 
       </Head>
 
-      <Header></Header>
+      {/* FIX THIS */}
+      <section className={styles.mobile_logo_container}>
+        <Link href="/">
+          <a>
+            <picture className={styles.mobile_logo_picture}>
+              <source srcSet="../images/whiteLogo.png" type="image/png" />
+              <img className={styles.main_logo} src="../images/whiteLogo.png" alt="logo" />
+            </picture>
+          </a>
+        </Link>
+      </section>
+
+      {/* END FIX THIS */}
+      <Header className={styles.header_components} />
+      <main className={styles.main}>
+        <picture className={styles.img_container}>
+          <source srcSet="../images/pexels-cn-tower.jpg" type="image/jpeg" />
+          <img src="../images/pexels-cn-tower.jpg" alt="pexels-cn-tower" />
+        </picture>
+        <FeaturedMusic />
+      </main>
+
+
 
     </div>
   )

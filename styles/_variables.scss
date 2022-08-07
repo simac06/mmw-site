@@ -1,6 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Teko:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap');
 
 $font-primary: 'Teko';
+$font-primary-w: 700;
+
+// Define font-secondary as a variable, with a default value of 'sans-serif' and a font-weight of 400.
+$font-secondary: 'Teko';
+$font-secondary-w: 500;
+
+
 
 
 $dark: #1a1a1a;
